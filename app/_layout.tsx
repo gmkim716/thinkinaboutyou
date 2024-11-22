@@ -1,29 +1,55 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
-import { Stack } from "expo-router";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Ionicons } from "@expo/vector-icons";
 
-export default function Layout({ children }: { children: React.ReactNode }) {
+import HomeScreen from "./index";
+import ProfileScreen from "./profile"; // 프로필 화면
+import SettingsScreen from "./settings/index"; // 설정 화면
+
+const Tab = createBottomTabNavigator();
+
+export default function Layout() {
   return (
-    <View style={styles.container}>
-      <Stack />
-      <View style={styles.content}>{children}</View>
-      <Text style={styles.footer}>Made with 💖 by You</Text>
-    </View>
+    <Tab.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "Home") {
+            iconName = focused ? "home" : "home-outline";
+          } else if (route.name === "Profile") {
+            iconName = focused ? "person" : "person-outline";
+          } else if (route.name === "Settings") {
+            iconName = focused ? "settings" : "settings-outline";
+          }
+
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+        tabBarActiveTintColor: "tomato",
+        tabBarInactiveTintColor: "gray",
+      })}
+    >
+      <Tab.Screen
+        name="Profile"
+        component={ProfileScreen}
+        options={{
+          tabBarLabel: "Profile",
+        }}
+      />
+      <Tab.Screen
+        name="Home"
+        component={HomeScreen} // 상단 탭 네비게이션을 하단 탭의 Home에 연결
+        options={{
+          tabBarLabel: "Home",
+        }}
+      />
+      <Tab.Screen
+        name="Settings"
+        component={SettingsScreen}
+        options={{
+          tabBarLabel: "Settings",
+        }}
+      />
+    </Tab.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-  content: {
-    flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  footer: {
-    textAlign: "center",
-    padding: 10,
-    backgroundColor: "#eee",
-  },
-});
