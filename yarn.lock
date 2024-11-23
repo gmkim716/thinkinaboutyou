@@ -1864,6 +1864,14 @@
   dependencies:
     nanoid "3.3.7"
 
+"@react-navigation/stack@^7.0.6":
+  version "7.0.6"
+  resolved "https://registry.yarnpkg.com/@react-navigation/stack/-/stack-7.0.6.tgz#34f9f19c4a46c4c67b8dedd4043889b93989a523"
+  integrity sha512-sU3LfE5VBCFiAXgnwHdm4hI3PKn1NfXi5B8ttTBduajIkse/RCOnrokK+1Z7CK3pmF4xyi4tGTtXJPCl62sQRA==
+  dependencies:
+    "@react-navigation/elements" "^2.1.1"
+    color "^4.2.3"
+
 "@remix-run/node@^2.12.0":
   version "2.14.0"
   resolved "https://registry.yarnpkg.com/@remix-run/node/-/node-2.14.0.tgz#af7b828af3dce6d157452a9bbf29bf1af1033e43"
@@ -3468,6 +3476,18 @@ expo-font@~13.0.1:
   integrity sha512-8JE47B+6cLeKWr5ql8gU6YsPHjhrz1vMrTqYMm72No/8iW8Sb/uL4Oc0dpmbjq3hLLXBY0xPBQOgU7FQ6Y04Vg==
   dependencies:
     fontfaceobserver "^2.1.0"
+
+expo-image-loader@~5.0.0:
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/expo-image-loader/-/expo-image-loader-5.0.0.tgz#4f58a21ab26e40d6fccc211b664fd9fe21a5dcb8"
+  integrity sha512-Eg+5FHtyzv3Jjw9dHwu2pWy4xjf8fu3V0Asyy42kO+t/FbvW/vjUixpTjPtgKQLQh+2/9Nk4JjFDV6FwCnF2ZA==
+
+expo-image-picker@^16.0.3:
+  version "16.0.3"
+  resolved "https://registry.yarnpkg.com/expo-image-picker/-/expo-image-picker-16.0.3.tgz#8b096777b4455272a3cb0dccfa3cee89b81bb13c"
+  integrity sha512-c4IOqIQOtx8puWWU4fVsJhuGiAhH6gAIdrVzhimOXSEUHnfxCckRYzvznbd/0cuvaA5y9H0CSYrxpTUc/0WNVw==
+  dependencies:
+    expo-image-loader "~5.0.0"
 
 expo-keep-awake@~14.0.1:
   version "14.0.1"
@@ -6111,6 +6131,11 @@ react-native-helmet-async@2.0.4:
     invariant "^2.2.4"
     react-fast-compare "^3.2.2"
     shallowequal "^1.1.0"
+
+react-native-image-picker@^7.1.2:
+  version "7.1.2"
+  resolved "https://registry.yarnpkg.com/react-native-image-picker/-/react-native-image-picker-7.1.2.tgz#383849d1953caf4578874a1f5e5dd11c737bd5cd"
+  integrity sha512-b5y5nP60RIPxlAXlptn2QwlIuZWCUDWa/YPUVjgHc0Ih60mRiOg1PSzf0IjHSLeOZShCpirpvSPGnDExIpTRUg==
 
 react-native-is-edge-to-edge@^1.1.6:
   version "1.1.6"
